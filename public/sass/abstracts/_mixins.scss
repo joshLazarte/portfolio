@@ -13,6 +13,28 @@
     outline: none;
     color: $color-secondary;
     background-color: $color-light;
+    box-shadow: $box-shadow-2;
+    transition: all 0.3s;
+  }
+}
+
+@mixin light-bg-hover {
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-light;
+    background-color: $color-secondary;
+    box-shadow: $box-shadow-2;
+    transition: all 0.3s;
+  }
+}
+
+@mixin input-focus {
+  &:focus {
+    outline: none;
+    border: 2px solid rgba($color-primary, 0.3);
+    box-shadow: $box-shadow-5;
+    transition: all 0.2s;
   }
 }
 

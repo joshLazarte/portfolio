@@ -1,0 +1,32 @@
+.footer {
+  padding: 4rem;
+  background-color: $color-rose;
+  font-size: 1.8rem;
+  &__copy {
+    color: $color-light-2;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__links {
+    list-style: none;
+    float: right;
+
+    &-item {
+      display: inline;
+      margin-left: 2rem;
+
+      a {
+        color: $color-light-2;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 0.6rem;
+        @include link-hover;
+      }
+    }
+  }
+}

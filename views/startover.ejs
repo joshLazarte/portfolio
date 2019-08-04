@@ -11,6 +11,9 @@
     <nav class="nav">
       <ul class="nav__links">
         <li class="nav__links-item">
+          <a href="#intro">Top</a>
+        </li>
+        <li class="nav__links-item">
           <a href="#skills">Skills</a>
         </li>
         <li class="nav__links-item">
@@ -22,7 +25,7 @@
       </ul>
     </nav>
 
-    <section class="intro">
+    <section id="intro" class="intro">
       <img
         src="images/temp-intro-img.jpg"
         alt="Coding Demo Gif"
@@ -221,14 +224,37 @@
               id="message"
               placeholder="Message"
             ></textarea>
-            <input
-              class="contact__form-submit"
-              type="submit"
-              value="Send Message"
-            />
+            <div class="contact__form-submit-wrapper">
+              <input
+                class="contact__form-submit"
+                type="submit"
+                value="Send Message"
+              />
+            </div>
           </form>
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <a href="/" class="footer__copy">&copy; 2019 Josh Lazarte</a>
+      <ul class="footer__links">
+        <li class="footer__links-item">
+          <a href="https://github.com/joshLazarte" target="_blank">
+            <span class="icon brands fa-github"></span> Github
+          </a>
+        </li>
+        <li class="footer__links-item">
+          <a href="https://www.linkedin.com/in/josh-lazarte/" target="_blank">
+            <span class="icon brands fa-linkedin"></span> LinkedIn
+          </a>
+        </li>
+        <li class="footer__links-item">
+          <a href="#" download>
+            <span class="icon solid fa-file"></span> Resume
+          </a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
