@@ -1,0 +1,38 @@
+.intro {
+  padding: 12rem 2rem;
+  background-color: $color-secondary;
+  text-align: center;
+  color: $color-light-2;
+  &__img {
+    border-radius: 100%;
+    display: block;
+    height: 25rem;
+    width: 25rem;
+    margin: 2.5rem auto;
+  }
+
+  &__name {
+    font-size: 6rem;
+  }
+
+  &__links {
+    list-style: none;
+    margin: 2.5rem 0;
+    &-item {
+      margin: 1rem;
+      display: inline;
+      a {
+        text-decoration: none;
+        color: $color-light-2;
+        font-size: 2rem;
+        padding: 1.5rem;
+        border-radius: 0.6rem;
+        @include link-hover;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 2.2rem;
+  }
+}

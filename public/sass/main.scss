@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
+
+@import "fontawesome-all.min";
 
 @import "base/base";
 
@@ -8,3 +11,9 @@
 @import "layout/grid";
 
 @import "components/navbar";
+@import "components/icons";
+
+@import "homepage/intro";
+@import "homepage/skills";
+@import "homepage/projects";
+@import "homepage/contact";

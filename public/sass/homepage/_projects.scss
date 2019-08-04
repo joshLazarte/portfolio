@@ -1,0 +1,39 @@
+.projects {
+  background-color: $color-rose;
+  padding: 12rem 2rem;
+
+  &__heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin: 6rem 0;
+    color: $color-light-2;
+  }
+
+  &__card {
+    background-color: $color-light;
+    border-radius: 0.3rem;
+    box-shadow: $box-shadow-1;
+    &-screenshot {
+      width: 100%;
+      border-radius: 0.3rem;
+      display: block;
+      margin-bottom: 2rem;
+      padding: 1rem;
+    }
+
+    &-title {
+      text-align: center;
+      font-size: 2.4rem;
+      text-decoration: none;
+      color: $color-primary;
+      margin: 4rem 0;
+    }
+
+    &-text {
+      padding: 2rem;
+      font-size: 1.8rem;
+      text-align: center;
+      color: $color-primary;
+    }
+  }
+}

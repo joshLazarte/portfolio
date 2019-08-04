@@ -13,17 +13,11 @@
       margin: 2rem;
       a {
         text-decoration: none;
-        color: white;
+        color: $color-light-2;
         font-size: 2rem;
         padding: 1rem;
         border-radius: 0.6rem;
-
-        &:hover,
-        &:focus {
-          outline: none;
-          color: $color-primary;
-          background-color: $color-light;
-        }
+        @include link-hover;
       }
     }
   }

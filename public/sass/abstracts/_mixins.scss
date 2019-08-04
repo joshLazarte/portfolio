@@ -6,6 +6,16 @@
   }
 }
 
+//hover effects
+@mixin link-hover {
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-secondary;
+    background-color: $color-light;
+  }
+}
+
 //media query manager
 /*
       0-600px: phone
@@ -19,7 +29,7 @@ breakpoint argument choices:
 - tab-port
 - tab-land
 - big-desk
-ORDER: Base + typography > general layout > grid > page layout > components
+
 1em = 16px
 */
 
