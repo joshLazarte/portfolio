@@ -4,7 +4,13 @@
   "description": "Personal portfolio website",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "node-sass public/sass/main.scss public/built-css/style.css -rw",
+    "compile:sass": "node-sass public/sass/main.scss public/built-css/style.comp.css",
+    "concat:css": "concat -o public/built-css/style.concat.css public/built-css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/built-css/style.concat.css -o public/built-css/style.prefix.css",
+    "compress:css": "node-sass public/built-css/style.prefix.css public/built-css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "repository": {
     "type": "git",
@@ -22,5 +28,11 @@
     "express": "^4.17.1",
     "mongoose": "^5.6.0",
     "nodemailer": "^6.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.3"
   }
 }
