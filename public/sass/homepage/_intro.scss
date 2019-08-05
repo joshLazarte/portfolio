@@ -20,6 +20,9 @@
     margin: 2.5rem 0;
     &-item {
       margin: 1rem;
+      @media only screen and (max-width: 430px) {
+        margin: 0;
+      }
       display: inline;
       a {
         text-decoration: none;
@@ -28,6 +31,16 @@
         padding: 1.5rem;
         border-radius: 0.6rem;
         @include link-hover;
+
+        @media only screen and (max-width: 430px) {
+          padding: 0.8rem;
+          font-size: 1.8rem;
+        }
+
+        @media only screen and (max-width: 350px) {
+          padding: 0.6rem;
+          font-size: 1.8rem;
+        }
       }
     }
   }

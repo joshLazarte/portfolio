@@ -2,6 +2,7 @@
   padding: 4rem;
   background-color: $color-rose;
   font-size: 1.8rem;
+
   &__copy {
     color: $color-light-2;
     text-decoration: none;
@@ -19,6 +20,9 @@
     &-item {
       display: inline;
       margin-left: 2rem;
+      @media only screen and (max-width: 430px) {
+        margin: 0;
+      }
 
       a {
         color: $color-light-2;
@@ -26,7 +30,27 @@
         padding: 1rem;
         border-radius: 0.6rem;
         @include link-hover;
+
+        @media only screen and (max-width: 430px) {
+          padding: 0.8rem;
+          font-size: 1.8rem;
+        }
+
+        @media only screen and (max-width: 350px) {
+          padding: 0.6rem;
+          font-size: 1.8rem;
+        }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .footer {
+    text-align: center;
+    &__links {
+      float: none;
+      margin-top: 2rem;
     }
   }
 }
