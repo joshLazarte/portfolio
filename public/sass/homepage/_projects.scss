@@ -29,6 +29,19 @@
       margin: 4rem 0;
     }
 
+    &-github {
+      color: $color-primary;
+      text-decoration: none;
+      font-size: 1.6rem;
+      margin-top: 1rem;
+      margin-left: -1.6rem;
+      padding: .5rem;
+      border-radius: .6rem;
+      display: inline-block;
+
+      @include light-bg-hover
+    }
+
     &-text {
       padding: 2rem;
       font-size: 1.8rem;
