@@ -66,6 +66,18 @@
       margin-top: 2rem;
     }
 
+    .g-recaptcha {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    &-recaptcha-error {
+      color: $color-primary;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
     &-submit {
       text-align: center;
       border: none;
