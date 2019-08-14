@@ -48,6 +48,21 @@
   }
 }
 
+@mixin app-main-menu-hover {
+  &:hover,
+  &:focus {
+    background-position: left bottom;
+    padding-left: 2.5rem;
+    transition: all .5s ease;
+    outline: none;
+  }
+
+  &:active {
+    background-position: left bottom;
+    padding-left: 2.5rem;
+  }
+}
+
 //media query manager
 /*
       0-600px: phone

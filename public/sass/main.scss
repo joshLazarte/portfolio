@@ -16,8 +16,15 @@
 @import "components/footer";
 @import "components/icons";
 @import "components/messages";
+@import "components/hr";
 
 @import "homepage/intro";
 @import "homepage/skills";
 @import "homepage/projects";
 @import "homepage/contact";
+
+@import "app-homepage/main-content";
+@import "app-homepage/app-about";
+@import "app-homepage/app-skills";
+@import "app-homepage/app-projects";
+@import "app-homepage/app-contact";
