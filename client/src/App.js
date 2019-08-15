@@ -1,19 +1,25 @@
 import React from 'react';
+import { Breakpoint, BreakpointProvider } from 'react-socks';
 
-import Navbar from './components/layout/Navbar';
-import DesktopContainer from './components/layout/DesktopContainer';
-import MobileContainer from './components/layout/MobileContainer';
+import DesktopContainer from './components/layout/desktop/DesktopContainer';
+import MobileContainer from './components/layout/mobile/MobileContainer';
 
-import './assets/App.css';
-
+import './assets/css/App.css';
 import backgroundImage from './assets/images/bg-img.jpg';
 
 const App = () => {
   return (
-    <div style={backgroundStyle}>
-      <Navbar name={'Nana'} />
-      <DesktopContainer />
-    </div>
+    <BreakpointProvider>
+      <div style={backgroundStyle}>
+        <Breakpoint small down>
+          <MobileContainer />
+        </Breakpoint>
+
+        <Breakpoint medium up>
+          <DesktopContainer />
+        </Breakpoint>
+      </div>
+    </BreakpointProvider>
   );
 };
 
