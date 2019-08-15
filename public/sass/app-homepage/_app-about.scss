@@ -31,13 +31,13 @@
         &-item {
             display: inline-block;
             font-size: 1.4rem;
-
-            &:not(:first-child) {
-                margin-left: 2rem;
-            }
             a {
                 color: $color-dark-blue;
                 text-decoration: none;
+                padding: 1rem 2rem;
+                border-radius: 0.2rem;
+                @include app-nav-normal-state(top, $color-green, $color-white);
+                @include app-nav-hover(bottom, $color-white);
             }
         }
     }

@@ -38,28 +38,123 @@
   }
 }
 
-@mixin app-nav-hover {
+@mixin app-nav-normal-state($position, $color1, $color2) {
+  background-image: linear-gradient( to $position,
+  $color1 50%,
+  $color2 50%);
+  background-size: 100% 200%;
+  background-position: $position right;
+  transition: background-position 0.5s ease;
+}
+
+@mixin app-nav-hover($position, $color) {
   &:hover,
   &:focus {
+    background-position: left $position;
+    transition: all .5s ease;
     outline: none;
-    color: $color-black;
-    background-color: $color-white;
-    transition: all 0.4s;
+    color: $color;
+  }
+
+  &:active {
+    background-position: left $position;
+    color: $color;
   }
 }
 
-@mixin app-main-menu-hover {
+@mixin fill-in-XY-normal($position, $color1, $color2) {
+  padding: 1rem 2rem;
+  border-radius: 0.2rem;
+  background-image: linear-gradient( to $position,
+  $color1 50%,
+  $color2 50%);
+  background-size: 200% 100%;
+  background-position: $position bottom;
+  transition: background-position 0.5s ease;
+}
+
+@mixin fill-in-XY-hover($position, $color) {
+  &:hover,
+  &:focus {
+    background-position: $position bottom;
+    transition: all .5s ease .1s;
+    outline: none;
+    color: $color;
+  }
+
+  &:active {
+    background-position: $position bottom;
+    color: $color;
+  }
+}
+
+@mixin app-main-menu-normal($padding-y, $padding-x) {
+  padding: $padding-y $padding-x;
+  background-image: linear-gradient( to right,
+  $color-dark-green 50%,
+  $color-green 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.5s ease, padding-left 0.5s ease;
+}
+
+@mixin app-main-menu-hover($padding-left) {
   &:hover,
   &:focus {
     background-position: left bottom;
-    padding-left: 2.5rem;
+    padding-left: $padding-left;
     transition: all .5s ease;
     outline: none;
   }
 
   &:active {
     background-position: left bottom;
-    padding-left: 2.5rem;
+    padding-left: $padding-left;
+  }
+}
+
+@mixin image-hover {
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+    box-shadow: $box-shadow-2;
+    transition: all .3s ease;
+  }
+}
+
+
+//scrollbar styles
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: .5rem;
+  }
+}
+
+//default input styles
+@mixin input-style {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: .2rem;
+  box-shadow: $box-shadow-4;
+  border: none;
+  background-color: $color-white;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  font-style: italic;
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgba($color-green, .8);
+    box-shadow: $box-shadow-4;
+    transition: all .3s ease;
   }
 }
 

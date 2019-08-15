@@ -1,18 +1,34 @@
 .app-contact {
-    &__heading {}
+    padding: 2rem 3rem;
+
+    &__heading {
+        font-size: 3rem;
+        color: $color-dark-blue;
+        text-align: center;
+        margin: 4rem 0;
+        margin-bottom: -1.5rem;
+    }
 
     &__form {
-
+        width: 85%;
+        margin: 4rem auto;
         &-input {
-
-
-            &--small {}
+            @include input-style;
         }
 
-        &-textarea {}
+        &-textarea {
+            @include input-style;
+            height: 15rem;
+        }
 
-        &-submit-wrapper {}
-
-        &-submit {}
+        &-submit {
+            @include input-style;
+            font-style: normal;
+            color: $color-white;
+            margin-top: 2rem;
+            cursor: pointer;
+            @include app-main-menu-normal(1.5rem, 1rem);
+            @include app-main-menu-hover(1.5rem);
+        }
     }
 }

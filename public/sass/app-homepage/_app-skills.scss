@@ -1,14 +1,46 @@
 .app-skills {
+    padding: 2rem 3rem;
 
-    &__title {}
+    &__title {
+        font-size: 3rem;
+        color: $color-dark-blue;
+        margin-bottom: -1.5rem;
+        text-align: center;
+        margin-top: 1rem;
 
-    &__heading {}
+        span {
+            color: $color-green;
+        }
+    }
+
+    &__heading {
+        font-size: 1.8rem;
+        color: $color-dark-blue;
+
+        span {
+            font-size: 1.4rem;
+            margin-right: .5rem;
+        }
+    }
 
     &__list {
+        margin-bottom: 2rem;
+        font-size: 1.4rem;
+        list-style: none;
+        line-height: 1.5;
+        padding: 0 2rem 0 4rem;
 
         &-item {
-
-            strong {}
+            &:before {
+                content: "✓";
+                display: inline-block;
+                margin-left: -2.4rem;
+                width: 2rem;
+                color: $color-dark-blue;
+            }
+            strong {
+                color: $color-dark-blue;
+            }
         }
     }
 }
