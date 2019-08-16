@@ -4,6 +4,7 @@ import SectionContext from '../../../context/section/sectionContext';
 const MainMenu = () => {
   const sectionContext = useContext(SectionContext);
   const {
+    currentSection,
     renderAbout,
     renderSkills,
     renderProjects,
@@ -12,23 +13,23 @@ const MainMenu = () => {
   return (
     <div className='menu-container'>
       <ul className='main-menu'>
-        <li className='main-menu__item'>
-          <a href='!#' onClick={renderAbout}>
+        <li className={'main-menu__item'}>
+          <a className={currentSection === 'ABOUT' ? 'menu-item-active' : undefined} href='!#' onClick={renderAbout}>
             ABOUT
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='!#' onClick={renderSkills}>
+          <a className={currentSection === 'SKILLS' ? 'menu-item-active' : undefined} href='!#' onClick={renderSkills}>
             SKILLS
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='!#' onClick={renderProjects}>
+          <a className={currentSection === 'PROJECTS' ? 'menu-item-active' : undefined} href='!#' onClick={renderProjects}>
             PROJECTS
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='!#' onClick={renderContact}>
+          <a className={currentSection === 'CONTACT' ? 'menu-item-active' : undefined} href='!#' onClick={renderContact}>
             CONTACT
           </a>
         </li>

@@ -4,6 +4,7 @@ import SectionContext from '../../../context/section/sectionContext';
 const MobileMenu = () => {
   const sectionContext = useContext(SectionContext);
   const {
+    currentSection,
     renderAbout,
     renderSkills,
     renderProjects,
@@ -13,13 +14,13 @@ const MobileMenu = () => {
     <div className='menu-container menu-container--mobile'>
       <ul className='main-menu'>
         <li className='main-menu__item main-menu__item--mobile main-menu__item--multi-link'>
-          <a href='https://github.com/joshLazarte' target='_blank'>
+          <a href='https://github.com/joshLazarte' target='_blank' rel="noopener noreferrer">
             <span className='icon brands fa-github' /> Github
           </a>
           <a
             href='https://www.linkedin.com/in/josh-lazarte/'
             target='_blank'
-            id='test'
+            rel="noopener noreferrer"
           >
             <span className='icon brands fa-linkedin' /> LinkedIn
           </a>
@@ -28,22 +29,22 @@ const MobileMenu = () => {
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='#' onClick={renderAbout}>
+          <a className={currentSection === 'ABOUT' ? 'menu-item-active' : undefined} href='!#' onClick={renderAbout}>
             ABOUT
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='#' onClick={renderSkills}>
+          <a className={currentSection === 'SKILLS' ? 'menu-item-active' : undefined} href='!#' onClick={renderSkills}>
             SKILLS
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='#' onClick={renderProjects}>
+          <a className={currentSection === 'PROJECTS' ? 'menu-item-active' : undefined} href='!#' onClick={renderProjects}>
             PROJECTS
           </a>
         </li>
         <li className='main-menu__item'>
-          <a href='#' onClick={renderContact}>
+          <a className={currentSection === 'CONTACT' ? 'menu-item-active' : undefined} href='!#' onClick={renderContact}>
             CONTACT
           </a>
         </li>

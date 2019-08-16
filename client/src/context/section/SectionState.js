@@ -6,7 +6,8 @@ import {
   RENDER_SKILLS_SECTION,
   RENDER_PROJECTS_SECTION,
   RENDER_CONTACT_SECTION
-} from '../types';
+}
+from '../types';
 
 const SectionState = props => {
   const initialState = {
@@ -15,19 +16,23 @@ const SectionState = props => {
 
   const [state, dispatch] = useReducer(sectionReducer, initialState);
 
-  const renderAbout = () => {
+  const renderAbout = (e) => {
+    e && e.preventDefault();
     dispatch({ type: RENDER_ABOUT_SECTION, payload: 'ABOUT' });
   };
 
-  const renderSkills = () => {
+  const renderSkills = (e) => {
+    e && e.preventDefault();
     dispatch({ type: RENDER_SKILLS_SECTION, payload: 'SKILLS' });
   };
 
-  const renderProjects = () => {
+  const renderProjects = (e) => {
+    e && e.preventDefault();
     dispatch({ type: RENDER_PROJECTS_SECTION, payload: 'PROJECTS' });
   };
 
-  const renderContact = () => {
+  const renderContact = (e) => {
+    e && e.preventDefault();
     dispatch({ type: RENDER_CONTACT_SECTION, payload: 'CONTACT' });
   };
 
