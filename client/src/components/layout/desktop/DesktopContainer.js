@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import About from '../../sections/About';
+import MainContent from '../../MainContent';
 import Navbar from './Navbar';
 import MainMenu from './MainMenu';
 
@@ -8,9 +8,7 @@ const DesktopContainer = () => {
     <Fragment>
       <Navbar />
       <div className='main-content'>
-        <div className='main-display'>
-          <About />
-        </div>
+        <MainContent />
         <MainMenu />
       </div>
     </Fragment>

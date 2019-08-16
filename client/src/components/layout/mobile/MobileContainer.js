@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react';
 import MobileNavbar from './MobileNavbar';
-import About from '../../sections/About';
+import MainContent from '../../MainContent';
 
 const MobileContainer = () => {
   return (
     <Fragment>
       <MobileNavbar />
-      <div className='main-display'>
-        <About />
-      </div>
+      <MainContent />
     </Fragment>
   );
 };
