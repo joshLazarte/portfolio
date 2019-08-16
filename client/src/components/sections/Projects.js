@@ -9,7 +9,7 @@ const Projects = () => {
       <div className='project'>
         <a href='/calendar-app'>
           <img
-            src={calendar}
+            src={ calendar }
             alt='Calendar of events'
             className='project__screenshot'
           />

@@ -1,6 +1,7 @@
 .env
 node_modules/
 /public/built-css/
+client/src/assets/css/
 
 
 # misc

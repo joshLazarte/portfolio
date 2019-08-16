@@ -1,0 +1,50 @@
+.app-projects {
+    padding: 2rem 3rem;
+
+    &__title {
+        font-size: 3rem;
+        color: $color-dark-blue;
+        text-align: center;
+        margin: 2rem 0;
+        margin-bottom: -1.5rem;
+    }
+    .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+
+        &__screenshot {
+            border-radius: 1rem;
+            box-shadow: $box-shadow-4;
+            @include image-hover;
+            transition: all .3s ease;
+        }
+
+        &__title {
+            color: $color-dark-blue;
+            font-size: 1.8rem;
+            text-decoration: none;
+            margin: 2rem 0 1rem 0;
+            @include fill-in-XY-normal(right, $color-green, $color-white);
+            @include fill-in-XY-hover(left, $color-white);
+        }
+
+        &__github {
+            color: $color-dark-blue;
+            text-decoration: none;
+            font-size: 1.6rem;
+            @include fill-in-XY-normal(left, $color-green, $color-white);
+            @include fill-in-XY-hover(right, $color-white);
+
+            span {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__description {
+            font-size: 1.4rem;
+            margin: 1rem;
+        }
+    }
+}

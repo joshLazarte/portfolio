@@ -10,8 +10,10 @@ const About = () => {
       <div className='line' />
       <p className='about__text'>
         Self-taught, <strong>self-motivated</strong> developer with a
-        <strong>passion</strong> for <strong>solving problems</strong> and
-        <strong>creating value.</strong>
+        {' '}
+        <strong>passion{' '}</strong>
+        for < strong > solving problems < /strong> and{' '}
+                <strong>creating value.</strong>
       </p>
       <div className='line' />
       <ul className='about__links'>
