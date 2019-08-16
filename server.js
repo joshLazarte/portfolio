@@ -4,7 +4,8 @@ const express = require("express"),
   sessionConfig = require("./config/session"),
   bodyParser = require("body-parser"),
   flash = require("connect-flash"),
-  messages = require("./config/messages");
+  messages = require("./config/messages"),
+  path = require("path");
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -13,12 +14,12 @@ app.use(bodyParser.json());
 app.use(sessionConfig);
 app.use(flash());
 app.use(messages);
+app.use(require("./routes/landing"));
+app.use("/contact", require("./routes/contact"));
+app.use("/downloads", require("./routes/downloads"));
 
-const landing = require("./routes/landing");
-const contact = require("./routes/contact");
-const downloads = require("./routes/downloads");
-app.use(landing);
-app.use("/contact", contact);
-app.use("/downloads", downloads);
+app.get('/new', (req, res) => {
+  res.sendFile(path.resolve("./client/build/index.html"));
+});
 
 app.listen(process.env.PORT, () => console.log("server started"));

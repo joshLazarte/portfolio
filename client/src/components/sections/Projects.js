@@ -1,88 +1,69 @@
 import React from 'react';
-import calendar from '../../assets/images/calendar.JPG';
+
+
+const projects = [{
+    _id: 1,
+    title: 'MERN Calendar',
+    href: '/calendar-app',
+    img: '/images/projects/calendar.JPG',
+    alt: 'Calendar of events',
+    githubLink: 'https://github.com/joshLazarte/calendar_app',
+    description: 'Create, manage, and share events. Built with the MERN stack.'
+  },
+  {
+    _id: 2,
+    title: 'Budget App',
+    href: '/budget-app',
+    img: '/images/projects/budget-capture.PNG',
+    alt: 'Budget dashboard',
+    githubLink: 'https://github.com/joshLazarte/budget-tool',
+    description: 'Simple budget tool built with vanilla javascript and Chart.js'
+  },
+  {
+    _id: 3,
+    title: 'Community of Faith',
+    href: 'https://wearecommunityoffaith.org',
+    img: '/images/projects/cof.PNG',
+    alt: 'Community of Faith church website',
+    description: 'Local church website 100% custom designed and hand coded'
+  }
+];
 
 const Projects = () => {
   return (
     <section className='app-projects'>
-      <h2 className='app-projects__title'>Projects</h2>
+    <h2 className='app-projects__title'>Projects</h2>
       <div className='line' />
-      <div className='project'>
-        <a href='/calendar-app'>
+    {projects.map(project => (
+      <div className='project' key={project._id}>
+        <a href={project.href}>
           <img
-            src={ calendar }
-            alt='Calendar of events'
+            src={project.img}
+            alt={project.alt}
             className='project__screenshot'
           />
         </a>
-        <a href='/calendar-app' className='project__title'>
-          <h3>MERN Calendar</h3>
+        <a href={project.href} className='project__title'>
+          <h3>{project.title}</h3>
         </a>
+        {project.githubLink &&
         <div className='u-text-center'>
           <a
             className='project__github'
-            href='https://github.com/joshLazarte/calendar_app'
+            href={project.githubLink}
             target='_blank'
             rel='noopener noreferrer'
           >
             <span className='icon brands fa-github' /> View Code
           </a>
         </div>
+        }
         <p className='project__description'>
-          Create, manage, and share events. Built with the MERN stack.
+          {project.description}
         </p>
+        <div className='line' />
       </div>
-      <div className='line' />
-      <div className='project'>
-        <a href='/calendar-app'>
-          <img
-            src={calendar}
-            alt='Calendar of events'
-            className='project__screenshot'
-          />
-        </a>
-        <a href='/calendar-app' className='project__title'>
-          <h3>MERN Calendar</h3>
-        </a>
-        <div className='u-text-center'>
-          <a
-            className='project__github'
-            href='https://github.com/joshLazarte/calendar_app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <span className='icon brands fa-github' /> View Code
-          </a>
-        </div>
-        <p className='project__description'>
-          Create, manage, and share events. Built with the MERN stack.
-        </p>
-      </div>
-      <div className='line' />
-      <div className='project'>
-        <a href='/calendar-app'>
-          <img
-            src={calendar}
-            alt='Calendar of events'
-            className='project__screenshot'
-          />
-        </a>
-        <a href='/calendar-app' className='project__title'>
-          <h3>MERN Calendar</h3>
-        </a>
-        <div className='u-text-center'>
-          <a
-            className='project__github'
-            href='https://github.com/joshLazarte/calendar_app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <span className='icon brands fa-github' /> View Code
-          </a>
-        </div>
-        <p className='project__description'>
-          Create, manage, and share events. Built with the MERN stack.
-        </p>
-      </div>
+    ))}
     </section>
   );
 };

@@ -4,7 +4,8 @@ node_modules/
 client/src/assets/css/
 
 
-# misc
+
+/client/build/
 /client/.env
 .DS_Store
 .env.local
