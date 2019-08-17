@@ -5,9 +5,7 @@ import SectionContext from '../../context/section/sectionContext';
 import Spinner from '../spinner/Spinner';
 
 const Contact = ({ loading, message, messageType }) => {
-  const verifyRecaptcha = token => {
-    setEmail({ ...newEmail, token });
-  };
+  const verifyRecaptcha = token => setEmail({ ...newEmail, token });
 
   const sectionContext = useContext(SectionContext);
 
@@ -42,9 +40,9 @@ const Contact = ({ loading, message, messageType }) => {
     toggleLoading();
     try {
       const res = await axios.post('/contact', { email: newEmail });
-      toggleLoading();
       setMessage({ msg: res.data.msg, type: 'success' });
       clearForm();
+      toggleLoading();
     } catch (err) {
       toggleLoading();
       if (err.response.data.msg) {
@@ -64,7 +62,7 @@ const Contact = ({ loading, message, messageType }) => {
       />
       <h2 className='app-contact__heading'>Contact</h2>
       <div className='line' />
-      {loading && <Spinner />}
+
       {message && (
         <p
           className={`app-contact__message ${messageType === 'error' &&
@@ -73,7 +71,9 @@ const Contact = ({ loading, message, messageType }) => {
           {message}
         </p>
       )}
-      {!loading && (
+      {loading ? (
+        <Spinner />
+      ) : (
         <div className='app-contact__form'>
           <form onSubmit={onSubmit}>
             <input
