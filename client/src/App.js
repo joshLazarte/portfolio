@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { loadReCaptcha } from 'react-recaptcha-v3';
 import { Breakpoint, BreakpointProvider } from 'react-socks';
 
 import DesktopContainer from './components/layout/desktop/DesktopContainer';
@@ -10,6 +11,10 @@ import './assets/css/App.css';
 import backgroundImage from './assets/images/bg-img.jpg';
 
 const App = () => {
+  useEffect(
+    () => loadReCaptcha('6Ld4fbMUAAAAABmaT9Us2KbnmXOclZGOTe2VSL5b'),
+    []
+  );
   return (
     <BreakpointProvider>
       <SectionState>

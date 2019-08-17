@@ -7,7 +7,8 @@ import Contact from './sections/Contact';
 
 const MainContent = () => {
   const sectionContext = useContext(SectionContext);
-  const { currentSection } = sectionContext;
+  const { currentSection, loading, message, messageType } = sectionContext;
+  const props = { loading, message, messageType };
 
   let content;
 
@@ -19,7 +20,7 @@ const MainContent = () => {
       content = <Projects />;
       break;
     case 'CONTACT':
-      content = <Contact />;
+      content = <Contact {...props} />;
       break;
     default:
       content = <About />;

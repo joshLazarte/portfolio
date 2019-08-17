@@ -3,13 +3,9 @@ const express = require('express'),
   { transporter, getMailOptions } = require('../config/email'),
   verifyRecaptcha = require('./utils/recaptcha');
 
-//@todo verifyRecaptcha,
-router.post('/', (req, res) => {
+router.post('/', verifyRecaptcha, (req, res) => {
   transporter.sendMail(getMailOptions(req.body.email), (error, info) => {
-    if (error) {
-      console.log(error);
-      res.status(500).json({ msg: 'Server Error...' });
-    }
+    if (error) return res.status(500).json({ msg: 'Server Error...' });
     console.log('Message sent: %s', info.messageId);
   });
 
