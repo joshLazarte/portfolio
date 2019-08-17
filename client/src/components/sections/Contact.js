@@ -9,9 +9,14 @@ const Contact = () => {
     message: ''
   });
 
-  const [response, setResponse] = useState({ msg: null });
-
   const { name, email, subject, message } = newMessage;
+
+  const [response, setResponse] = useState({
+    msg: null,
+    type: undefined
+  });
+
+  const { msg, type } = response;
 
   const onChange = e => {
     setMessage({
@@ -33,18 +38,25 @@ const Contact = () => {
     try {
       const res = await axios.post('/contact', { email: newMessage });
       console.log(res.data.msg);
-      setResponse({ ...response, msg: res.data.msg });
+      setResponse({ msg: res.data.msg, type: 'success' });
       clearForm();
     } catch (err) {
-      setResponse({ ...response, msg: 'Something Went Wrong...' });
+      setResponse({ msg: 'Something Went Wrong...', type: 'error' });
     }
   };
 
   return (
     <section className='app-contact'>
       <h2 className='app-contact__heading'>Contact</h2>
-      {response.msg && <h5 className='app-contact__message'>{response.msg}</h5>}
       <div className='line' />
+      {msg && (
+        <p
+          className={`app-contact__message ${type === 'error' &&
+            'app-contact__message--error'}`}
+        >
+          {msg}
+        </p>
+      )}
       <div className='app-contact__form'>
         <form onSubmit={onSubmit}>
           <input

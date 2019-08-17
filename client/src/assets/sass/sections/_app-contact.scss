@@ -10,6 +10,14 @@
   }
 
   &__message {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-green;
+    margin-bottom: -2rem;
+
+    &--error {
+      color: $color-error;
+    }
   }
 
   &__form {
