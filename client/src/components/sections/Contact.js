@@ -11,7 +11,7 @@ const Contact = () => {
 
   const { name, email, subject, message } = newMessage;
 
-  const onChange = (e) => {
+  const onChange = e => {
     setMessage({
       ...newMessage,
       [e.target.name]: e.target.value
@@ -20,17 +20,18 @@ const Contact = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    // try {
-    //   axios.post('/contact', { email: newMessage });
-    // }
-    // catch (err) {
-    //   console.log(err);
-    // }
-
-    alert('Not Working Yet');
-
+    try {
+      const res = await axios.post('/contact', { email: newMessage });
+      setMessage({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
-
 
   return (
     <section className='app-contact'>

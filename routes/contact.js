@@ -1,16 +1,16 @@
 const express = require('express'),
-    router = express.Router(),
-    { transporter, getMailOptions } = require('../config/email'),
-    verifyRecaptcha = require('./utils/recaptcha');
+  router = express.Router(),
+  { transporter, getMailOptions } = require('../config/email'),
+  verifyRecaptcha = require('./utils/recaptcha');
 
+//@todo verifyRecaptcha,
+router.post('/', (req, res) => {
+  transporter.sendMail(getMailOptions(req.body.email), (error, info) => {
+    if (error) return console.log(error);
+    console.log('Message sent: %s', info.messageId);
+  });
 
-router.post("/", verifyRecaptcha, (req, res) => {
-    transporter.sendMail(getMailOptions(req.body.email), (error, info) => {
-        if (error) return console.log(error);
-        console.log('Message sent: %s', info.messageId);
-    });
-    req.flash("success", "Message Sent");
-    res.redirect("/#contact");
+  res.status(200).json({ msg: 'Email Sent!' });
 });
 
 module.exports = router;

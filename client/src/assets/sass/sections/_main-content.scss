@@ -4,7 +4,7 @@
 }
 
 .main-display {
-  background: url(/images/bg-card.png) repeat-x right top #f4f4f4;
+  background: url(../images/bg-card.png) repeat-x right top #f4f4f4;
   width: 50rem;
   height: 60rem;
   overflow-y: auto;
@@ -14,7 +14,7 @@
 
   @media only screen and (max-width: 768px) {
     width: 90vw;
-    height: auto;
+    max-height: 95vh;
     margin: 0 auto;
     padding-bottom: 2rem;
   }
