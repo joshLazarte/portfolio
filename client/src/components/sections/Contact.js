@@ -9,6 +9,8 @@ const Contact = () => {
     message: ''
   });
 
+  const [response, setResponse] = useState({ msg: null });
+
   const { name, email, subject, message } = newMessage;
 
   const onChange = e => {
@@ -18,24 +20,30 @@ const Contact = () => {
     });
   };
 
+  const clearForm = () =>
+    setMessage({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+
   const onSubmit = async e => {
     e.preventDefault();
     try {
       const res = await axios.post('/contact', { email: newMessage });
-      setMessage({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      console.log(res.data.msg);
+      setResponse({ ...response, msg: res.data.msg });
+      clearForm();
     } catch (err) {
-      console.log(err);
+      setResponse({ ...response, msg: 'Something Went Wrong...' });
     }
   };
 
   return (
     <section className='app-contact'>
       <h2 className='app-contact__heading'>Contact</h2>
+      {response.msg && <h5 className='app-contact__message'>{response.msg}</h5>}
       <div className='line' />
       <div className='app-contact__form'>
         <form onSubmit={onSubmit}>

@@ -6,7 +6,10 @@ const express = require('express'),
 //@todo verifyRecaptcha,
 router.post('/', (req, res) => {
   transporter.sendMail(getMailOptions(req.body.email), (error, info) => {
-    if (error) return console.log(error);
+    if (error) {
+      console.log(error);
+      res.status(500).json({ msg: 'Server Error...' });
+    }
     console.log('Message sent: %s', info.messageId);
   });
 
