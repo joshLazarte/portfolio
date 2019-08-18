@@ -2,14 +2,14 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className='app-nav'>
+    <nav className='nav'>
       <div className='container'>
-        <div className='app-nav__title'>
+        <div className='nav__title'>
           <span className='name'>Josh Lazarte</span> |{' '}
           <span className='tag'>Developer</span>
         </div>
-        <ul className='app-nav__list'>
-          <li className='app-nav__list-item'>
+        <ul className='nav__list'>
+          <li className='nav__list-item'>
             <a
               href='https://github.com/joshLazarte'
               target='_blank'
@@ -18,7 +18,7 @@ const Navbar = () => {
               <span className='icon brands fa-github' /> Github
             </a>
           </li>
-          <li className='app-nav__list-item'>
+          <li className='nav__list-item'>
             <a
               href='https://www.linkedin.com/in/josh-lazarte/'
               target='_blank'
@@ -27,7 +27,7 @@ const Navbar = () => {
               <span className='icon brands fa-linkedin' /> LinkedIn
             </a>
           </li>
-          <li className='app-nav__list-item'>
+          <li className='nav__list-item'>
             <a href='/downloads/resume' download>
               <span className='icon solid fa-file' /> Resume
             </a>

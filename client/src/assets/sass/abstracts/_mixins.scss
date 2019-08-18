@@ -7,40 +7,9 @@
 }
 
 //hover effects
-@mixin link-hover {
-  &:hover,
-  &:focus {
-    outline: none;
-    color: $color-secondary;
-    background-color: $color-light;
-    box-shadow: $box-shadow-2;
-    transition: all 0.3s;
-  }
-}
-
-@mixin light-bg-hover {
-  &:hover,
-  &:focus {
-    outline: none;
-    color: $color-light;
-    background-color: $color-secondary;
-    box-shadow: $box-shadow-2;
-    transition: all 0.3s;
-  }
-}
-
-@mixin input-focus {
-  &:focus {
-    outline: none;
-    border: 2px solid rgba($color-primary, 0.3);
-    box-shadow: $box-shadow-5;
-    transition: all 0.2s;
-  }
-}
-
 @mixin app-nav-normal-state($position, $color1, $color2) {
   background-image: linear-gradient(to $position, $color1 50%, $color2 50%);
-  background-size: 100% 200%;
+  background-size: 150% 250%;
   background-position: $position right;
   transition: background-position 0.5s ease;
 }
@@ -60,16 +29,16 @@
   }
 }
 
-@mixin fill-in-XY-normal($position, $color1, $color2) {
+@mixin fill-in-X-normal($position, $color1, $color2) {
   padding: 1rem 2rem;
   border-radius: 0.2rem;
   background-image: linear-gradient(to $position, $color1 50%, $color2 50%);
-  background-size: 200% 100%;
+  background-size: 250% 150%;
   background-position: $position bottom;
   transition: background-position 0.5s ease;
 }
 
-@mixin fill-in-XY-hover($position, $color) {
+@mixin fill-in-X-hover($position, $color) {
   &:hover,
   &:focus {
     background-position: $position bottom;
@@ -128,7 +97,7 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: darkgrey;
-    outline: 1px solid slategrey;
+    outline: none;
     border-radius: 0.5rem;
   }
 }
@@ -140,12 +109,25 @@
   padding: 1.5rem;
   margin: 1rem 0;
   border-radius: 0.2rem;
+  -webkit-appearance: none;
   box-shadow: $box-shadow-4;
+  -webkit-box-shadow: $box-shadow-4;
   border: none;
   background-color: $color-white;
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
-  font-style: italic;
+
+  @media only screen and(max-width: 900px) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and(max-width: 600px) {
+    font-size: 2rem;
+  }
+
+  &:not(:focus) {
+    font-style: italic;
+  }
 
   &:focus {
     outline: none;

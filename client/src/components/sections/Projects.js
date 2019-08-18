@@ -1,7 +1,7 @@
 import React from 'react';
 
-
-const projects = [{
+const projects = [
+  {
     _id: 1,
     title: 'MERN Calendar',
     href: '/calendar-app',
@@ -31,39 +31,37 @@ const projects = [{
 
 const Projects = () => {
   return (
-    <section className='app-projects'>
-    <h2 className='app-projects__title'>Projects</h2>
+    <section className='projects'>
+      <h2 className='projects__title'>Projects</h2>
       <div className='line' />
-    {projects.map(project => (
-      <div className='project' key={project._id}>
-        <a href={project.href}>
-          <img
-            src={project.img}
-            alt={project.alt}
-            className='project__screenshot'
-          />
-        </a>
-        <a href={project.href} className='project__title'>
-          <h3>{project.title}</h3>
-        </a>
-        {project.githubLink &&
-        <div className='u-text-center'>
-          <a
-            className='project__github'
-            href={project.githubLink}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <span className='icon brands fa-github' /> View Code
+      {projects.map(project => (
+        <div className='project' key={project._id}>
+          <a href={project.href}>
+            <img
+              src={project.img}
+              alt={project.alt}
+              className='project__screenshot'
+            />
           </a>
+          <a href={project.href} className='project__title'>
+            <h3>{project.title}</h3>
+          </a>
+          {project.githubLink && (
+            <div className='u-text-center'>
+              <a
+                className='project__github'
+                href={project.githubLink}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <span className='icon brands fa-github' /> View Code
+              </a>
+            </div>
+          )}
+          <p className='project__description'>{project.description}</p>
+          <div className='line' />
         </div>
-        }
-        <p className='project__description'>
-          {project.description}
-        </p>
-        <div className='line' />
-      </div>
-    ))}
+      ))}
     </section>
   );
 };

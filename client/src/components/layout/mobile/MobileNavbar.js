@@ -15,10 +15,10 @@ const MobileNavbar = () => {
 
   return (
     <Fragment>
-      <nav className='app-nav'>
+      <nav className='nav'>
         <div className='container'>
-          <div className='app-nav__title'>Josh Lazarte</div>
-          <a href='!#' onClick={toggleMenu} className='app-nav__menu-btn'>
+          <div className='nav__title'>Josh Lazarte</div>
+          <a href='!#' onClick={toggleMenu} className='nav__menu-btn'>
             <span className='icon solid fa-bars' />
           </a>
         </div>

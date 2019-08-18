@@ -54,19 +54,19 @@ const Contact = ({ loading, message, messageType }) => {
   };
 
   return (
-    <section className='app-contact'>
+    <section className='contact'>
       <ReCaptcha
         sitekey='6Ld4fbMUAAAAABmaT9Us2KbnmXOclZGOTe2VSL5b'
         action='contact'
         verifyCallback={verifyRecaptcha}
       />
-      <h2 className='app-contact__heading'>Contact</h2>
+      <h2 className='contact__heading'>Contact</h2>
       <div className='line' />
 
       {message && (
         <p
-          className={`app-contact__message ${messageType === 'error' &&
-            'app-contact__message--error'}`}
+          className={`contact__message ${messageType === 'error' &&
+            'contact__message--error'}`}
         >
           {message}
         </p>
@@ -74,10 +74,10 @@ const Contact = ({ loading, message, messageType }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='app-contact__form'>
+        <div className='contact__form'>
           <form onSubmit={onSubmit}>
             <input
-              className='app-contact__form-input'
+              className='contact__form-input'
               type='text'
               name='name'
               value={name}
@@ -86,7 +86,7 @@ const Contact = ({ loading, message, messageType }) => {
               required
             />
             <input
-              className='app-contact__form-input'
+              className='contact__form-input'
               type='email'
               name='email'
               value={email}
@@ -95,7 +95,7 @@ const Contact = ({ loading, message, messageType }) => {
               required
             />
             <input
-              className='app-contact__form-input'
+              className='contact__form-input'
               type='text'
               name='subject'
               value={subject}
@@ -104,7 +104,7 @@ const Contact = ({ loading, message, messageType }) => {
               required
             />
             <textarea
-              className='app-contact__form-textarea'
+              className='contact__form-textarea'
               name='body'
               value={body}
               onChange={onChange}
@@ -112,7 +112,7 @@ const Contact = ({ loading, message, messageType }) => {
               required
             />
             <input
-              className='app-contact__form-submit'
+              className='contact__form-submit'
               type='submit'
               value='Send Message'
             />
