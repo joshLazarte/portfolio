@@ -5,6 +5,11 @@ $color-dark-blue: #004445;
 $color-green: #6fb98f;
 $color-error: #ed4337;
 
+$fade-in: fadeIn 2s ease-out;
+$fade-in-bottom: fadeInFromBottom 2s ease-out;
+$fade-in-name: fadeInName 2s ease-out;
+$fade-in-title: fadeInTitle 2s ease-out;
+
 //box-shaddows
 $box-shadow-1: 0 0.8rem 1rem rgba(0, 0, 0, 0.3);
 $box-shadow-2: 0 0.4rem 1rem rgba(0, 0, 0, 0.3);

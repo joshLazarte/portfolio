@@ -1,6 +1,6 @@
 @mixin clearfix {
   &::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -39,9 +39,7 @@
 }
 
 @mixin app-nav-normal-state($position, $color1, $color2) {
-  background-image: linear-gradient( to $position,
-  $color1 50%,
-  $color2 50%);
+  background-image: linear-gradient(to $position, $color1 50%, $color2 50%);
   background-size: 100% 200%;
   background-position: $position right;
   transition: background-position 0.5s ease;
@@ -51,7 +49,7 @@
   &:hover,
   &:focus {
     background-position: left $position;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     outline: none;
     color: $color;
   }
@@ -65,9 +63,7 @@
 @mixin fill-in-XY-normal($position, $color1, $color2) {
   padding: 1rem 2rem;
   border-radius: 0.2rem;
-  background-image: linear-gradient( to $position,
-  $color1 50%,
-  $color2 50%);
+  background-image: linear-gradient(to $position, $color1 50%, $color2 50%);
   background-size: 200% 100%;
   background-position: $position bottom;
   transition: background-position 0.5s ease;
@@ -77,7 +73,7 @@
   &:hover,
   &:focus {
     background-position: $position bottom;
-    transition: all .5s ease .1s;
+    transition: all 0.5s ease 0.1s;
     outline: none;
     color: $color;
   }
@@ -90,9 +86,11 @@
 
 @mixin app-main-menu-normal($padding-y, $padding-x) {
   padding: $padding-y $padding-x;
-  background-image: linear-gradient( to right,
-  $color-dark-green 50%,
-  $color-green 50%);
+  background-image: linear-gradient(
+    to right,
+    $color-dark-green 50%,
+    $color-green 50%
+  );
   background-size: 200% 100%;
   background-position: right bottom;
   transition: background-position 0.5s ease, padding-left 0.5s ease;
@@ -103,7 +101,7 @@
   &:focus {
     background-position: left bottom;
     padding-left: $padding-left;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     outline: none;
   }
 
@@ -118,10 +116,9 @@
   &:focus {
     transform: translateY(-3px);
     box-shadow: $box-shadow-2;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
-
 
 //scrollbar styles
 @mixin scrollbar {
@@ -132,7 +129,7 @@
   &::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
   }
 }
 
@@ -142,19 +139,19 @@
   width: 100%;
   padding: 1.5rem;
   margin: 1rem 0;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   box-shadow: $box-shadow-4;
   border: none;
   background-color: $color-white;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
   font-style: italic;
 
   &:focus {
     outline: none;
-    border: 2px solid rgba($color-green, .8);
+    border: 2px solid rgba($color-green, 0.8);
     box-shadow: $box-shadow-4;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 

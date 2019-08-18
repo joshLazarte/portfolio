@@ -1,6 +1,6 @@
 .app-contact {
   padding: 2rem 3rem;
-
+  animation: $fade-in;
   &__heading {
     font-size: 3rem;
     color: $color-dark-blue;

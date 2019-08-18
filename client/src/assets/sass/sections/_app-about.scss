@@ -1,57 +1,61 @@
 .about {
-    padding-top: 1.5rem;
-    &__img {
-        border-radius: 100%;
-        box-shadow: $box-shadow-4;
-        display: block;
-        height: 25rem;
-        width: 25rem;
-        margin: 2rem auto 4rem auto;
-        background: linear-gradient( 304.34deg, rgba($color-dark-green, 0.7) 71.33%,
-        rgba($color-dark-blue, .2) 105.55%),
-        url(../images/about-img.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+  padding-top: 1.5rem;
+  animation: $fade-in;
+  &__img {
+    border-radius: 100%;
+    box-shadow: $box-shadow-4;
+    display: block;
+    height: 25rem;
+    width: 25rem;
+    margin: 2rem auto 4rem auto;
+    background: linear-gradient(
+        304.34deg,
+        rgba($color-dark-green, 0.7) 71.33%,
+        rgba($color-dark-blue, 0.2) 105.55%
+      ),
+      url(../images/about-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-    &__name {
-        text-align: center;
-        font-size: 3rem;
+  &__name {
+    text-align: center;
+    font-size: 3rem;
+    color: $color-dark-blue;
+
+    span {
+      color: $color-green;
+    }
+  }
+
+  &__links {
+    list-style: none;
+    text-align: center;
+    margin: 2rem 0;
+    &-item {
+      display: inline-block;
+      font-size: 1.4rem;
+      a {
         color: $color-dark-blue;
-
-        span {
-            color: $color-green;
-        }
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 0.2rem;
+        @include app-nav-normal-state(top, $color-green, $color-white);
+        @include app-nav-hover(bottom, $color-white);
+      }
     }
+  }
 
-    &__links {
-        list-style: none;
-        text-align: center;
-        margin: 2rem 0;
-        &-item {
-            display: inline-block;
-            font-size: 1.4rem;
-            a {
-                color: $color-dark-blue;
-                text-decoration: none;
-                padding: 1rem 2rem;
-                border-radius: 0.2rem;
-                @include app-nav-normal-state(top, $color-green, $color-white);
-                @include app-nav-hover(bottom, $color-white);
-            }
-        }
+  &__text {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $color-black;
+
+    strong {
+      color: $color-dark-blue;
     }
-
-    &__text {
-        width: 60%;
-        margin: 0 auto;
-        line-height: 1.5;
-        font-size: 1.6rem;
-        text-align: center;
-        color: $color-black;
-
-        strong {
-            color: $color-dark-blue;
-        }
-    }
+  }
 }

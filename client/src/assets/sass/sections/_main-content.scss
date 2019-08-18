@@ -8,6 +8,7 @@
   width: 50rem;
   height: 60rem;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: $box-shadow-2;
   border-radius: 0.2rem;
   @include scrollbar;
@@ -37,6 +38,7 @@
     width: 90vw;
     margin: -2rem auto 2rem auto;
     text-align: center;
+    animation: $fade-in-bottom;
   }
 }
 
