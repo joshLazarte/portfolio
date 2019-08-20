@@ -74,7 +74,7 @@ const Skills = () => {
           <strong>NGINX</strong> reverse proxy configuration
         </li>
         <li className='skills__list-item'>
-          Simple <strong>UFW</strong> configuration and <strong>SSH</strong> key
+          <strong>UFW</strong> IP access configuration and <strong>SSH</strong> key
           access
         </li>
       </ul>
