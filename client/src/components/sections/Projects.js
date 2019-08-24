@@ -5,7 +5,7 @@ const projects = [
     _id: 1,
     title: 'MERN Calendar',
     href: '/calendar-app',
-    img: '/images/projects/calendar.JPG',
+    img: '/images/projects/calendar.PNG',
     alt: 'Calendar of events',
     githubLink: 'https://github.com/joshLazarte/calendar_app',
     description: 'Create, manage, and share events. Built with the MERN stack.'
