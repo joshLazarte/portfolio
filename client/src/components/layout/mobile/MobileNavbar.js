@@ -17,7 +17,9 @@ const MobileNavbar = () => {
     <Fragment>
       <nav className='nav'>
         <div className='container'>
-          <div className='nav__title'>Josh Lazarte</div>
+          <a href='/' className='nav__title'>
+            Josh Lazarte
+          </a>
           <a href='!#' onClick={toggleMenu} className='nav__menu-btn'>
             <span className='icon solid fa-bars' />
           </a>
