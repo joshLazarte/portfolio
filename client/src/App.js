@@ -4,7 +4,6 @@ import { Breakpoint, BreakpointProvider } from 'react-socks';
 
 import DesktopContainer from './components/layout/desktop/DesktopContainer';
 import MobileContainer from './components/layout/mobile/MobileContainer';
-
 import SectionState from './context/section/SectionState';
 
 import './assets/css/App.css';
