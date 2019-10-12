@@ -15,7 +15,12 @@ const Projects = () => {
               className='project__screenshot'
             />
           </a>
-          <a href={project.href} className='project__title'>
+          <a
+            href={project.href}
+            className='project__title'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <h3>{project.title}</h3>
           </a>
           {project.githubLink && (
