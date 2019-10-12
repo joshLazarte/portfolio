@@ -29,7 +29,7 @@
   {
     "_id": 4,
     "title": "Rockport Oaks RV Park",
-    "href": "https://rockportoaksrvpark.org",
+    "href": "https://rockportoaksrvpark.com",
     "img": "/images/projects/rockport-oaks.PNG",
     "alt": "Rockport Oaks RV Park website",
     "description": "Locally owned RV park website with custom design and code base. Owner also has the ability to upload new lots and edit page text via NodeJS backend"
